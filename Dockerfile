@@ -11,9 +11,8 @@ RUN apk update \
     && apk add --no-cache nano \
     && rm -rf /var/cache/apk/*
 
-# Uncomment the below if you want a shareable volume for nano
-# RUN mkdir -p /data
-# VOLUME /data
-# WORKDIR /data
+RUN mkdir -p /data
+VOLUME /data
+WORKDIR /data
 
 ENTRYPOINT ["nano"]
